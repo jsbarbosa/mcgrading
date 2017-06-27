@@ -1,3 +1,5 @@
+from .functions import *
+
 class Student():
     def __init__(self, zipfile):
         self.zipfile = zipfile
@@ -13,12 +15,13 @@ class Student():
             self.files_in_zip = zipfile.namelist()
 
     def run(self, task):
+        self.dir()
         try:
-            self.dir()
             task.run()
-            self.backdir()
         except Exception as e:
+            print("EXCEPTION", e)
             self.comments.append(str(e))
+        self.backdir()
 
     def addTasks(self, tasks):
         self.tasks += tasks
@@ -30,7 +33,7 @@ class Student():
                 zipfile.extractall()
         else:
             self.folder = "%s_%s/"%(self.name, self.split[-1].split('.')[0])
-            self.comments.append("Directory does not exist")
+            self.comments.append("Directory does not exist.")
             try:
                 os.mkdir(self.folder)
             except FileExistsError:

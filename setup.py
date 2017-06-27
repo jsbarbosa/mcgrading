@@ -9,17 +9,16 @@ setup(
     version = "0.0.0",
     author = "Juan Barbosa",
     author_email = "js.barbosa10@uniandes.edu.co",
-    description = (read('README')),
-    #description = ("An demonstration of how to create, document, and publish "
-                                #    "to the cheese shop a5# pypi.org."),
+    description = ('Build to serve at UniAndes.'),
     license = "GPL",
     keywords = "example documentation tutorial",
     url = "http://github.com/jsbarbosa/mcgrading",
     packages=['mcgrading'],
+    install_requires=['pebble', 'importlib'],
     long_description=read('README'),
     classifiers=[
         "Development Status :: 1 - Planning",
         "Topic :: Utilities",
-        "License :: GPL License",
+        "License :: OSI Approved :: GNU General Public License (GPL)",
     ],
 )

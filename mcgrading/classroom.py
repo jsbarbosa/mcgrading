@@ -22,6 +22,7 @@ class Classroom():
 
     def runTasks(self):
         for student in self.students:
+            print(student.name)
             student.runAll()
 
     def undesired(self, desired, remove = True):
